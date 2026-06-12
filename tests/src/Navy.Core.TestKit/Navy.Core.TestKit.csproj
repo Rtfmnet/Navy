@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Navy.Core.TestKit</AssemblyName>
+    <RootNamespace>Navy.Core.TestKit</RootNamespace>
+    <!-- Exclude the UniTask shim from coverage — it is test infrastructure, not game code -->
+    <CoverletExcludeByFile>**/UniTaskShim/**</CoverletExcludeByFile>
+  </PropertyGroup>
+
+  <!-- ── Core source files (no copy) ──────────────────────────────────────── -->
+  <ItemGroup>
+    <Compile Include="..\..\..\unity\Assets\Scripts\Core\**\*.cs"
+             LinkBase="CoreSource" />
+  </ItemGroup>
+
+</Project>

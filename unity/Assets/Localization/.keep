@@ -1,0 +1,19 @@
+Unity Localization StringTable files are created on PC #2 via
+Window > Asset Management > Localization Tables.
+
+Required tables:
+  Table Collection: "Game"
+  Locales: uk (Ukrainian, default), en (English)
+
+Key list (add to both locales):
+  lobby.waiting
+  lobby.connected
+  lobby.session_unavailable
+  map_select.choose
+  map_select.waiting_opponent
+  setup.waiting_opponent
+  game.your_turn
+  game.opponent_turn
+  result.victory
+  result.defeat
+  result.draw

@@ -1,0 +1,11 @@
+Audio clips (.wav / .mp3) are imported on PC #2 in Unity Editor.
+Required clips (see AudioCatalog.cs):
+- shot.wav
+- hit.wav
+- sunk.wav
+- miss.wav
+- timer_warning.wav
+- timer_alert.wav
+- victory.wav
+- defeat.wav
+- background_music.mp3
