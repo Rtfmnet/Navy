@@ -560,7 +560,7 @@ Menu ─┬─▶ Lobby (Host) ─▶ MapSelect ─▶ Setup ─▶ Game ─▶ 
 1. Ініціалізація Firebase SDK (`FirebaseApp.CheckAndFixDependenciesAsync`)
 2. Anonymous Sign-In
 3. Завантаження `PlayerPrefs` (нік, налаштування)
-4. Ініціалізація Localization (default `uk`)
+    4. Ініціалізація Localization: при першому запуску визначає мову з `Application.systemLanguage` (`uk` якщо Ukrainian, інакше `en`); зберігає вибір у `PlayerPrefs`
 5. Реєстрація сервісів у `ServiceLocator`
 6. Перехід на `MenuPanel`
 
@@ -584,7 +584,7 @@ public static class ServiceLocator
 
 ### 8.3. Локалізація
 
-Unity Localization Package. Дві StringTables: `Game (uk)`, `Game (en)`. Default: `uk`.
+Unity Localization Package. Дві StringTables: `Game (uk)`, `Game (en)`. При першому запуску мова визначається автоматично через `Application.systemLanguage`: Ukrainian → `uk`, будь-яка інша → `en`. Збережений вибір зчитується з `PlayerPrefs` при наступних запусках.
 
 Доступ через `LocalizedString` у Inspector або статично:
 ```csharp

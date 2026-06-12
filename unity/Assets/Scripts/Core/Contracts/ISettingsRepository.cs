@@ -13,6 +13,7 @@ namespace Navy.Core.Contracts
         float MusicVolume { get; set; }     // 0–1
         bool VibrationEnabled { get; set; }
         string Language { get; set; }       // "uk" / "en"
+        bool HasLanguageSaved { get; }      // false on first launch (before auto-detection)
 
         void Save();
     }

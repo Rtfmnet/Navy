@@ -15,7 +15,7 @@ namespace Navy.Infrastructure
     ///   1. Firebase SDK init
     ///   2. Anonymous sign-in
     ///   3. Load PlayerPrefs (nick, settings)
-    ///   4. Apply settings (audio, vibration, locale)
+    ///   4. Apply settings (audio, vibration, locale); auto-detect language on first launch
     ///   5. Register services in ServiceLocator
     ///   6. Show Menu panel
     /// </summary>
@@ -55,6 +55,15 @@ namespace Navy.Infrastructure
 
             // 3 & 4. Settings + apply
             var settings = new PlayerPrefsSettingsRepository();
+
+            // On first launch (key absent) detect device locale:
+            //   Ukrainian device → "uk", anything else → "en"
+            if (!settings.HasLanguageSaved)
+            {
+                settings.Language = Application.systemLanguage == SystemLanguage.Ukrainian ? "uk" : "en";
+                settings.Save();
+            }
+
             ServiceLocator.Settings = settings;
             ServiceLocator.Session  = sessionService;
 

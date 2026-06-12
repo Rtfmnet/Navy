@@ -41,9 +41,12 @@ namespace Navy.Data.Settings
             set => PlayerPrefs.SetInt(KeyVibration, value ? 1 : 0);
         }
 
+        /// <summary>True if the user has explicitly chosen a language (or it was auto-detected on first launch).</summary>
+        public bool HasLanguageSaved => PlayerPrefs.HasKey(KeyLanguage);
+
         public string Language
         {
-            get => PlayerPrefs.GetString(KeyLanguage, "uk");
+            get => PlayerPrefs.GetString(KeyLanguage, "en");
             set => PlayerPrefs.SetString(KeyLanguage, value);
         }
 
